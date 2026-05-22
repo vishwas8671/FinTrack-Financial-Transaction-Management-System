@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased selection:bg-fin-emerald/30 selection:text-fin-emerald;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  @apply bg-white/70 dark:bg-slate-900/75 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/60 shadow-lg shadow-slate-100/10 dark:shadow-black/20;
+}
+
+.glass-card {
+  @apply bg-white/40 dark:bg-slate-900/40 backdrop-blur-sm border border-slate-200/30 dark:border-slate-800/40 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300/50 dark:hover:border-slate-700/50;
+}
+
+/* Glass Inputs */
+.glass-input {
+  @apply bg-white/50 dark:bg-slate-800/40 border border-slate-300/60 dark:border-slate-700/60 rounded-xl px-4 py-2 text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-fin-emerald/50 focus:border-fin-emerald transition-all duration-200;
+}
+
+/* Neon Glows */
+.neon-glow-emerald {
+  box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.2);
+}
+
+.neon-glow-violet {
+  box-shadow: 0 0 15px -3px rgba(139, 92, 246, 0.2);
+}
+
+.neon-glow-rose {
+  box-shadow: 0 0 15px -3px rgba(244, 63, 94, 0.2);
+}
+
+/* Custom Hide/Show Animation Classes */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
